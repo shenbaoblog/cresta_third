@@ -1,0 +1,442 @@
+// --------------------------------
+// レイアウト
+// --------------------------------
+/*ヘッダー*/
+.ly_header {
+  // background: $cWhite;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // opacity: 1;
+  background-color: hsla(0, 0%, 100%, 0.295);
+  z-index: 20;
+}
+
+.ly_section {
+  padding: $sectionHeightPaddingMobile 0;
+  &:last-of-type {
+    padding-bottom: 80px;
+  }
+}
+.ly_section_about {
+  position: relative;
+  padding: 80px 0 0 0;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: $cGray;
+    height: 160px;
+    bottom: 0;
+    width: 100%;
+    z-index: -10;
+    transform-origin: left;
+    transform: skewY(4deg);
+  }
+}
+.ly_cont {
+  margin: 0px auto;
+  padding: 0 15px;
+  max-width: $contentMaxWidth;
+}
+.ly_cont_full {
+  margin: 0px auto;
+  max-width: $contentMaxWidth - 30px;
+}
+
+.ly_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ly_footer {
+  padding: 20px 0;
+  background-color: $cFooterBG;
+}
+// 下層ページの場合
+.ly_underlayer {
+  &.bl_firstView {
+    height: 67.31634vh;
+  }
+  .bl_firstView_wrapper {
+    height: 58.02099vh;
+  }
+}
+// --------------------------------
+// ブロック
+// --------------------------------
+// blの内部に含まれるよう
+.bl_ly_contMb {
+  > * {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bl_card {
+  @extend .bl_ly_contMb;
+  &_imgWrapper {
+    position: relative;
+    padding-top: 67.30769%;
+    overflow: hidden;
+    > img {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.bl_cardUnit__col2 {
+  display: flex;
+  flex-wrap: wrap;
+  .bl_card {
+    width: 52.72727%;
+    max-width: 520px;
+    margin-right: 0;
+    margin-bottom: 40px;
+    flex-grow: 1;
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.bl_vertPosts {
+  &_item {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  &_header {
+    padding-bottom: 10px;
+  }
+  &_date {
+    color: #cecece;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  &_ttl {
+    text-decoration: none;
+    color: $cBlack;
+    &:focus,
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.bl_media {
+  @extend .bl_ly_contMb;
+  &_imgWrapper {
+    max-width: 520px;
+  }
+  &_body {
+    @extend .bl_ly_contMb;
+  }
+}
+
+// -----------------------------
+// オリジナル
+.bl_siteLogo {
+  width: 190px;
+  position: fixed;
+  top: 16px;
+  left: 4vw;
+  svg {
+    transition: all 0.7s;
+    fill: $cWhite;
+  }
+  &.js_svgFillBlack {
+    svg {
+      fill: $cBlack;
+    }
+  }
+}
+
+/*ドロワー*/
+.bl_drawer {
+  position: relative;
+  // inputのcheckboxは非表示
+  &_checkbox {
+    display: none;
+  }
+  // ハンバーガーアイコン
+  &_icon {
+    cursor: pointer;
+    display: block;
+    width: 84px;
+    height: 40px;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    transform: translateY(-50%);
+    // ハンバーガーアイコンの中の線
+    &Lines {
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+    &Lines,
+    &Lines::before,
+    &Lines::after {
+      position: absolute;
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $cWhite;
+    }
+    &Lines::before,
+    &Lines::after {
+      content: "";
+    }
+    &Lines:before {
+      top: 8px;
+    }
+    &Lines:after {
+      top: -8px;
+    }
+    &Text {
+      display: block;
+      height: 16px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      color: $cWhite;
+      font-size: 16px;
+    }
+  }
+
+  // ファーストビュー分スクロール後にメニューボタンを黒色に変更
+  &_icon.js_menuBlack {
+    .bl_drawer_iconLines,
+    .bl_drawer_iconLines::before,
+    .bl_drawer_iconLines::after {
+      background-color: $cBlack;
+    }
+    .bl_drawer_iconText {
+      color: $cBlack;
+    }
+  }
+  // ドロワーメニュー開いた時のメインエリアを暗く
+  &_overlay {
+    background: #000;
+    opacity: 0;
+    pointer-events: none; //ポインタの動作全部無効化
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  // ドロワーメニュー
+  &_menu {
+    background: $cBlack;
+    // color: #000;
+    opacity: 0.9;
+    max-width: 520px;
+    width: 70vw;
+    height: 100vh;
+    overflow-y: auto; //スクロール
+    -webkit-overflow-scrolling: touch; //スクロール（SP）
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    &Inner {
+      margin-top: 35vh;
+      text-align: center;
+      transform: translateY(-50%);
+      svg {
+        width: 42.15px;
+        margin-bottom: 40px;
+      }
+    }
+    &List {
+      @extend .bl_ly_contMb;
+      a {
+        color: $cWhite;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  }
+  // z-indexの指定（1がメインエリア）
+  &_icon {
+    z-index: 4;
+  }
+  &_menu {
+    z-index: 3;
+  }
+  &_overlay {
+    z-index: 2;
+  }
+
+  // チェックが入ったら（アイコンクリックしたら）
+  &_checkbox:checked ~ {
+    // ハンバーガーアイコンを変形
+    .bl_drawer_icon {
+      .bl_drawer_iconLines {
+        background: transparent;
+      }
+      .bl_drawer_iconLines:before {
+        transform: rotate(-30deg);
+        top: 0;
+      }
+      .bl_drawer_iconLines:after {
+        transform: rotate(30deg);
+        top: 0;
+      }
+    }
+    // メインエリアを暗くする
+    .bl_drawer_overlay {
+      opacity: 0.3;
+      pointer-events: auto; //ポインタの動作デフォルトに戻す
+    }
+    // メニューをだす
+    .bl_drawer_menu {
+      transform: translateX(0);
+    }
+  }
+  // 動きをスムーズに
+  &_iconLines,
+  &_iconLines:after,
+  &_iconLines:before,
+  &_overlay,
+  &_menu {
+    transition: all 0.7s;
+  }
+}
+
+.bl_firstView {
+  position: relative;
+  height: 100vh;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 60vw;
+    background-color: #222222;
+    // z-index: -10;
+  }
+  &_wrapper {
+    position: relative;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 86.95652vh;
+    width: 76.53333vw;
+  }
+  &_inner {
+    position: absolute;
+    right: -15%;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: $cWhite;
+  }
+  &_txtSm {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  &_txtBg {
+    font-size: 5.6rem;
+    font-weight: bold;
+  }
+}
+
+.bl_aboutUs {
+  position: relative;
+  padding: 50px 15px;
+  background-size: cover;
+  background-position: center center;
+  &_inner {
+    @extend .bl_ly_contMb;
+    padding: 40px 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    margin: 0 auto;
+    max-width: 590px;
+  }
+  &_txt {
+    // margin-bottom: 30px;
+    // @extend .hp_mbMd;
+  }
+}
+
+.bl_topics {
+  @extend .bl_ly_contMb;
+  .bl_vertPosts {
+    max-width: 700px;
+    margin-left: auto;
+  }
+}
+
+@import "baseAbout";
+@import "baseContact";
+
+// --------------------------------
+// エレメント
+// --------------------------------
+.el_lv2Heading {
+  // @extend .hp_fontLg;
+  // @extend .hp_mbMd;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.el_headerImg {
+  fill: $cWhite;
+}
+
+.el_footerCopyright {
+  display: block;
+  color: $cWhite;
+  font-size: 1rem;
+  text-align: center;
+}
+
+// --------------------------------
+// ヘルパー
+// --------------------------------
+@media screen and (max-width: 768px) {
+  .hp_mobileDisplayNon {
+    display: none;
+  }
+}
+.hp_lineH2 {
+  line-height: 2 !important;
+}
+.hp_lineH1_5 {
+  line-height: 1.5 !important;
+}
+.hp_bgGrey {
+  background-color: $cGray !important;
+}
+.hp_mb20 {
+  margin-bottom: 20px !important;
+}
+.hp_mb50 {
+  margin-bottom: 50px !important;
+}
+.hp_skewY3 {
+  transform-origin: left !important;
+  transform: skewY(4deg) !important;
+}
+.hp_skewY-3 {
+  transform-origin: left !important;
+  transform: skewY(-4deg) !important;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<%# ##_headを読み込み## %>
+<%- include('./_common/_head.ejs', {CONFIG: config["index"]}); %>
+
+<body>
+    <%- include('./_common/_header.ejs') %>
+
+    <main>
+        <!-- FIRST VIEW -->
+        <section class="bl_firstView">
+            <div class="bl_firstView_wrapper" style="background-image:url(./img/kv-img@2x.png);">
+                <div class="bl_firstView_inner">
+                    <div class="bl_firstView_txtSm hp_lineH1_5">
+                        <p>デザインで人を笑顔にする会社</p>
+                        <p>DIGSMILE INC.</p>
+                    </div>
+                    <p class="bl_firstView_txtBg">DESIGN<br>
+                        FOR<br>
+                        SMILE.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US -->
+        <section class="ly_section_about">
+            <div class="ly_cont_full bl_aboutUs" style="background-image:url(./img/about-img@2x.png)">
+                <div class="bl_aboutUs_inner">
+                    <h2 class="el_lv2Heading">ABOUT US</h2>
+                    <p class="bl_aboutUs_txt hp_lineH2">DIGSMILEは、デザインで人を笑顔にする会社。
+                        なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。<br>
+                        DIGSMILEの社名にはそんな想いが込められています。</p>
+                    <a href="about.html" class="el_btn">READ MORE</a>
+                </div>
+                <!-- /.bl_aboutUs_inner -->
+            </div>
+            <!-- /.bl_aboutUs -->
+        </section>
+
+        <section class="ly_section hp_bgGrey hp_skewY3">
+            <div class="ly_cont bl_cardUnit__col2 hp_skewY-3">
+                <!-- WORKS -->
+                <section id="works" class="bl_card">
+                    <h2 class="el_lv2Heading">WORKS</h2>
+                    <figure class="bl_card_imgWrapper">
+                        <img src="./img/works-img@2x.png" alt="works">
+                    </figure>
+                    <p class="bl_card_text">DIGSMILEの制作実績を紹介します。</p>
+                    <a href="#" class="el_btn">READ MORE<br>（リンク先未作成）</a>
+                </section>
+                <!-- CULTURE -->
+                <section id="culture" class="bl_card">
+                    <h2 class="el_lv2Heading">CULTURE</h2>
+                    <figure class="bl_card_imgWrapper">
+                        <img src="./img/culture-img@2x.png" alt="culture">
+                    </figure>
+                    <p class="bl_card_text">DIGSMILEの社内文化について紹介します。</p>
+                    <a href="#" class="el_btn">READ MORE<br>（リンク先未作成）</a>
+                </section>
+            </div>
+        </section>
+
+        <!-- LATEST TOPICS -->
+        <section id="topics" class="ly_section">
+            <div class="ly_cont bl_topics">
+                <h2 class="el_lv2Heading">LATEST TOPICS</h2>
+                <ul class="bl_vertPosts">
+                    <li class="bl_vertPosts_item">
+                        <div class="bl_vertPosts_header">
+                            <time class="bl_vertPosts_date" datetime="2020-02-01">2019.03.29</time>
+                        </div>
+                        <a class="bl_vertPosts_ttl" href="#">イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</a>
+                    </li>
+                    <li class="bl_vertPosts_item">
+                        <div class="bl_vertPosts_header">
+                            <time class="bl_vertPosts_date" datetime="2020-01-18">2020.01.18</time>
+                        </div>
+                        <a class="bl_vertPosts_ttl" href="#">プレスリリースのお知らせ DIGGIN’ RECORDS</a>
+                    </li>
+                    <li class="bl_vertPosts_item">
+                        <div class="bl_vertPosts_header">
+                            <time class="bl_vertPosts_date" datetime="2020-01-01">2020.01.01</time>
+                        </div>
+                        <a class="bl_vertPosts_ttl" href="#">新年明けましておめでとうございます</a>
+                    </li>
+                </ul>
+                <a href="#" class="el_btn">READ MORE<br>（リンク先未作成）</a>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="ly_section hp_bgGrey">
+            <div class="ly_cont bl_media">
+                <figure class="bl_media_imgWrapper">
+                    <img src="./img/recruit-img@2x.png" alt="recruit">
+                </figure>
+                <div class="bl_media_body">
+                    <h2 class="el_lv2Heading">CONTACT</h2>
+                    <p class="hp_lineH2">制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。
+                        まずはお気軽にご連絡ください。担当者から改めて返信いたします。</p>
+                    <a href="contact.html" class="el_btn">READ MORE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./_common/_footer.ejs') %>
+
+</body>
+
+</html>

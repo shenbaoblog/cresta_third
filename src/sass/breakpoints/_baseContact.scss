@@ -1,0 +1,134 @@
+.ly_section_contact {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+// --------------------------------
+// ブロック
+// --------------------------------
+.bl_contactWrapper {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    // text-align: center;
+  }
+}
+.bl_contact {
+  dt {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  dd {
+    margin-bottom: 40px;
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    .bl_contactPrivacy {
+      width: 100%;
+      // max-width: 700px;
+      padding: 13px;
+      font-size: 1.4rem;
+      border: 1px solid #333333;
+    }
+
+    textarea {
+      resize: none;
+    }
+    .bl_contactPrivacy {
+      overflow-y: scroll;
+      height: 230px;
+      p {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.bl_radio {
+  li {
+    margin-bottom: 14px;
+  }
+  input {
+    display: none;
+  }
+  label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $cBlack;
+      transform: translateY(-10%);
+    }
+  }
+  input:checked + label::before {
+    background-color: $cBlack;
+    box-shadow: 0 0 0 4px $cWhite inset;
+  }
+}
+
+.bl_personalInfo {
+  position: relative;
+  margin-bottom: 40px;
+  > input {
+    // appearance: none;
+    display: none;
+  }
+  > label {
+    display: inline-block;
+    padding-left: 26px;
+    cursor: pointer;
+    &::before {
+      content: "";
+      display: block;
+      border: 1px solid #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      transform: translateY(10%);
+    }
+  }
+  > input:checked + label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 10px;
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+    transform: translate(65%, 20%) rotate(40deg);
+  }
+}
+
+
+// --------------------------------
+// エレメント
+// --------------------------------
+.el_required {
+  display: inline-block;
+  padding: 0.3em 0.4em;
+  margin-left: 20px;
+  background-color: $cBlack;
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: bold;
+}

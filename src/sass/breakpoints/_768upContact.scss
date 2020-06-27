@@ -1,0 +1,64 @@
+.ly_section_contact {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.bl_contact {
+  dt {
+  }
+  dd {
+
+    input {
+      &[type="text"],
+      &[type="email"],
+      &[type="tel"] {
+        font-size: 1.6rem;
+      }
+    }
+    textarea {
+      font-size: 1.6rem;
+    }
+  }
+}
+.bl_radio {
+  li {
+    margin-right: 50px;
+    margin-bottom: 0px;
+    display: inline-block;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  input {
+    display: none;
+  }
+  label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $cBlack;
+      transform: translate(0, -55%);
+    }
+  }
+  input:checked + label::before {
+    background-color: $cBlack;
+    box-shadow: 0 0 0 4px $cWhite inset;
+  }
+}
+
+.bl_parsonalInfo {
+  input {
+
+  }
+  label {
+    
+  }
+}

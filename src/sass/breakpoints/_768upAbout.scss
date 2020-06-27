@@ -1,0 +1,37 @@
+.bl_message {
+  padding-right: 0;
+  &_img { // バックグラウンドimgで実装した場合
+    max-width: 420px;
+    width: 38%;
+    height: 280px;
+  }
+  &_img2 { // polyfillでIE対応化（いずれ、webpackでobject-fitで読み込めるようにする）
+    max-width: 420px;
+    width: 43%;
+    > img {
+      height: auto;
+    }
+  }
+  &_inner {
+    width: 70%;
+    margin-left: auto;
+  }
+  &_innerContent {
+    max-width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.bl_company {
+  &_inner {
+    // width: 95.76271%;
+  }
+}
+
+.bl_googleMap {
+  // width: 100%;
+  &_inner{
+    padding-top: 32.72727%;
+  }
+}

@@ -1,0 +1,95 @@
+.bl_vision {
+  @extend .bl_ly_contMb;
+  .bl_vision_textLg {
+    font-weight: bold;
+  }
+  &_textLg {
+    font-size: 2.4rem;
+  }
+  &_textMd {
+    @extend .bl_ly_contMb;
+  }
+}
+
+.bl_message {
+  // margin-right: 15px;
+  // margin-left: 15px;
+  position: relative;
+  padding: 130px 15px 0 15px;
+  max-width: 100%;
+  &_img {
+    // バックグラウンドimgで実装した場合
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    max-width: 90%;
+    width: 340px;
+    height: 230px;
+  }
+  &_img2 {
+    // polyfillでIE対応化（いずれ、webpackでobject-fitで読み込めるようにする）
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 90%;
+    & > img {
+      height: 230px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &_inner {
+    padding: 130px 15px 80px 15px;
+    background-color: $cGray;
+    &Content {
+      @extend .bl_ly_contMb;
+    }
+  }
+  &_text {
+    @extend .bl_ly_contMb;
+  }
+}
+
+.bl_company {
+  border-top: 1px solid #dddddd;
+  &_outer {
+    @extend .bl_ly_contMb;
+  }
+  &_inner {
+    max-width: 800px;
+    margin-left: auto;
+    // width: auto;
+    > div {
+      border-bottom: 1px solid #dddddd;
+      display: flex;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      > dt {
+        width: 144px;
+        font-weight: bold;
+      }
+      > dd {
+      }
+    }
+  }
+}
+
+.bl_googleMap {
+  // width: 100%;
+  &_inner{
+    position: relative;
+    height: 0;
+    padding-top: 136.23188%;
+    overflow: hidden;
+  }
+  iframe {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+  }
+}

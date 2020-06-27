@@ -1,0 +1,23 @@
+{
+  "default": {
+    "siteName": "クリスタTOP",
+    "url": "デフォルトUrl",
+    "ogpImg": "デフォルトOgp",
+    "cssPath": "./css/style.css"
+  },
+  "index": {
+    "title": "クリスタTOP",
+    "description": "トップページのディスクリプション",
+    "keyword": "トップページのキーワード"
+  },
+  "about": {
+    "title": "ABOUT US",
+    "description": "VISIONやCEO MESSAGEを紹介します。",
+    "keyword": "ABOUT US"
+  },
+  "contact": {
+    "title": "CONTACT",
+    "description": "お問い合わせはこちらから",
+    "keyword": "CONTACT,お問い合わせ"
+  }
+}

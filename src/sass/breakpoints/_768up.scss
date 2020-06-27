@@ -1,0 +1,113 @@
+body {
+  font-size: 1.6rem;
+}
+
+// --------------------------------
+// レイアウト
+// --------------------------------
+.ly_section {
+  padding: $sectionHeightPadding 0;
+  &:last-of-type {
+    padding-bottom: 120px;
+  }
+}
+.ly_section_about {
+  padding: 120px 0 20px 0;
+}
+.ly_cont_rightPadding {
+  padding-right: 15px;
+}
+.ly_header {
+  height: 97px;
+}
+
+// --------------------------------
+// ブロック
+// --------------------------------
+.bl_cardUnit__col2 {
+  flex-wrap: nowrap;
+  .bl_card {
+    margin-right: 5.45454%;
+    margin-bottom: 0;
+  }
+}
+
+.bl_vertPosts {
+  &_item {
+    padding-top: 30px;
+  }
+}
+
+.bl_media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &_imgWrapper {
+    max-width: 520px;
+    flex-basis: 40%;
+    margin-bottom: 0;
+  }
+  &_body {
+    // @extend .bl_ly_contMb;
+    flex-basis: 40%;
+    flex-basis: 52.72727%;
+  }
+}
+
+// -----------------------------
+// オリジナル
+.bl_siteLogo {
+  width: 260px;
+  top: 32px;
+}
+
+/*ドロワー*/
+.bl_drawer {
+  // ハンバーガーアイコン
+  &_icon {
+    top: 46px;
+  }
+}
+.bl_firstView {
+  &_inner {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(40%, -50%);
+    color: $cWhite;
+  }
+  &_txtSm {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  &_txtBg {
+    font-size: 7.2rem;
+    font-weight: bold;
+  }
+}
+
+.bl_aboutUs {
+  padding: 110px 15px;
+  &_inner {
+    padding: 50px 30px;
+    margin-left: 50px;
+    max-width: 590px;
+  }
+  &_txt {
+    // margin-bottom: 30px;
+  }
+}
+
+.bl_topics {
+  .el_btn {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+.bl_vision {
+  margin-left: 15.7vw;
+}
+
+@import "768upAbout";
+@import "768upContact";
