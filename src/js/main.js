@@ -3,8 +3,8 @@
 
 //import '../sass/style.scss'; // style.scssをバンドル（webpackでscssをバンドルするよう）
 // ----------webpack用---------------
-require("intersection-observer"); // polyfill
-import "whatwg-fetch"; // polyfill
+// require("intersection-observer"); // polyfill
+// import "whatwg-fetch"; // polyfill
 // import objectFitImages from "object-fit-images"; // polyfill
 // objectFitImages();
 // ----------外部ファイル読み込み-----------
